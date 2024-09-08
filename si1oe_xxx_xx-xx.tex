@@ -24,8 +24,7 @@
 \usepackage{newtxmath}
 
 \usepackage{tikz}
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
-            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 \let\sigma\upsigma
 \let\omega\upomega
@@ -38,17 +37,12 @@
 \newcommand{\de}{{\rm d}}
 \newcommand{\uu}{{\rm u}}
 \newcommand{\DD}{{\rm D}}
-
 \newcommand{\faz}[1]{\ensuremath{\underline{#1}}}
-
 \newcommand{\ID}[0]{0}
-
 \renewcommand{\infty}{\includegraphics[scale=1]{inf.pdf}}
-
 
 \usepackage{tabularx} % in the preamble
 
-\newboolean{opcijeZaPolaganje} 
 \input{generics.tex}
 
 \newcommand{\printheader}
@@ -127,23 +121,23 @@
 \noindent
 
 
-\ifthenelse{ispit}{ %Ispitna varijanta
+\ifthenelse{\boolean{ispit}}{ %Ispitna varijanta
     \textbf{\large Први колоквијум}. \hrulefill \\
     \noindent
     \textbf{Задатак}. \\[0.5mm]
-    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
+    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}\\[10mm]
     \noindent\textbf{Питања.} \\[.5mm]
-    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}
-    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}
+    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}\\[10mm]
+    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}\\[10mm]
 
     \noindent
     \textbf{\large Други колоквијум}. \hrulefill \\
     \noindent
     \textbf{Задатак}. \\[0.5mm]
-    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}\\[10mm]
     \noindent\textbf{Питања.} \\[1mm]
-    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}
-    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}
+    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}\\[10mm]
+    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}\\[10mm]
 
     \newpage
 
@@ -164,22 +158,22 @@
     \vspace*{2mm}
     \noindent
     \textbf{Задатак}. \\[0.5mm]
-    \renewcommand{\ID}{3}\input{zadaci/Z3t.tex}
+    \renewcommand{\ID}{3}\input{zadaci/Z3t.tex}\\[10mm]
 
-    \noindent\textbf{Питања.} 
-    \renewcommand{\ID}{5}\input{pitanja/P5t.tex}
-    \renewcommand{\ID}{6}\input{pitanja/P6t.tex}
+    \noindent\textbf{Питања.} \\[0.5mm]
+    \renewcommand{\ID}{5}\input{pitanja/P5t.tex}\\[10mm]
+    \renewcommand{\ID}{6}\input{pitanja/P6t.tex}\\[10mm]
 }
 { %Kolokvijumska varijanta
     \noindent\textbf{Питања.} \\[.5mm]
-    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}
-    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}
-    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}
-    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}    
+    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}\\[10mm]
+    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}\\[10mm]
+    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}\\[10mm]
+    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}\\[10mm]    
 
     \textbf{Задатак}. \\[0.5mm]
-    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
-    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}\\[10mm]
+    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}\\[10mm]
 }
 
 
@@ -198,7 +192,8 @@
 \renewcommand{\ID}{2}\input{pitanja/P2s.tex}\\[10mm]
 \renewcommand{\ID}{3}\input{pitanja/P3s.tex}\\[10mm]
 \renewcommand{\ID}{4}\input{pitanja/P4s.tex}\\[10mm]
-\ifthenelse{ispit}{
+\ifthenelse{\boolean{ispit}}
+{
 \renewcommand{\ID}{5}\input{pitanja/P5s.tex}\\[10mm]
 \renewcommand{\ID}{6}\input{pitanja/P6s.tex}\\[10mm]
 }{}
@@ -208,10 +203,9 @@
 \noindent
 \textbf{\large Задаци}. \\[0.5mm]
 
-\renewcommand{\ID}{1}\input{zadaci/Z1s.tex}
-\\[10mm]
+\renewcommand{\ID}{1}\input{zadaci/Z1s.tex}\\[10mm]
 \renewcommand{\ID}{2}\input{zadaci/Z2s.tex}\\[10mm]
-\ifthenelse{ispit}{
+\ifthenelse{\boolean{ispit}}{
 \renewcommand{\ID}{3}\input{zadaci/Z3s.tex}
 }{}
 
