@@ -2,14 +2,20 @@
 
 from examGenerator import *
 import os 
+import glob
 
 def main(rok, godina, datum, k = False, i = False, opcije = True):
     if rok in validMonths and validYear(godina):
-        #os.rename('si1oe_xxx_xx-xx.tex', f'si1oe{rok}-{godina}.tex') # Rename si1oe rok
-
+        if not k^i:
+            raise ValueError("Tip mora biti postavljen ili kao kolokvijum ili kao ispit")
+        os.rename(glob.glob('si1oe_*.tex')[0], f'si1oe{rok}-{godina}.tex') # Rename si1oe rok
+        
         with open("generics.tex", 'w', encoding='utf-8') as generics:
             generics.write(r"\newcommand{\datumIspita}{" + datum + " г}" + "\n")
-            if opcije:
+            
+            # U ispitnim rokovima posle februara, ne treba nuditi opcije za polaganje ispita
+            # odnosno, polaže se samo integralni ispit. 
+            if validMonths.index('FEB') < validMonths.index(rok):
                 generics.write(r"\setboolean{\opcijeZaPolaganje}{true}" + "\n")    
             else:
                 generics.write(r"\setboolean{\opcijeZaPolaganje}{false}" + "\n")
