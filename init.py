@@ -28,13 +28,13 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
                 generics.write(r"\newcommand{\naslovFormulara}{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n") 
                 generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_ispit.pdf}" + "\n") 
             else:
-                generics.write(r"\setboolean{ispit}{false}")
+                generics.write(r"\setboolean{ispit}{false}" + "\n")
                 generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_kolokvijum.pdf}" + "\n") 
-                if k == 1:
+                if k == "1":
                     generics.write(r"\newcommand{\naslovFormulara}{ПРВИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
-                elif k == 2:
+                elif k == "2":
                     generics.write(r"\newcommand{\naslovFormulara}{ДРУГИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
-                elif k == 3:
+                elif k == "3":
                     generics.write(r"\newcommand{\naslovFormulara}{ТРЕЋИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
         with open('.vscode/settings.json', 'w') as settings:
             settings.write(f'''{{
