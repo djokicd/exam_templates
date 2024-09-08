@@ -8,7 +8,7 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
     if rok in validMonths and validYear(godina):
         if not bool(k)^bool(i):
             raise ValueError("Tip mora biti postavljen ili kao kolokvijum ili kao ispit")
-        os.rename(glob.glob('si1oe_*.tex')[0], f'si1oe{rok}-{godina}.tex') # Rename si1oe rok
+        os.rename(glob.glob('si1oe_*.tex')[0], f'si1oe_{rok}-{godina}.tex') # Rename si1oe rok
         
         with open("generics.tex", 'w', encoding='utf-8') as generics:
             generics.write(r"\newcommand{\datumIspita}{" + datum + " г}" + "\n")
@@ -31,7 +31,19 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
                     generics.write(r"\newcommand{\naslovFormulara}{ДРУГИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
                 elif k == 3:
                     generics.write(r"\newcommand{\naslovFormulara}{ТРЕЋИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
-
+        with open('.vscode/settings.json', 'w') as settings:
+            settings.write(f'''{{
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+        "--shell-escape", // if you want to have the shell-escape flag
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "--aux-directory=.aux",
+        "si1oe_{rok}-{godina}.tex"
+    ]
+}}''')
     else:
         raise ValueError("Pogresan format roka ili godine!")
 
