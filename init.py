@@ -16,9 +16,9 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
             # U ispitnim rokovima posle februara, ne treba nuditi opcije za polaganje ispita
             # odnosno, polaže se samo integralni ispit. 
             if validMonths.index('FEB') < validMonths.index(rok):
-                generics.write(r"\setboolean{\opcijeZaPolaganje}{true}" + "\n")    
+                generics.write(r"\setboolean{opcijeZaPolaganje}{true}" + "\n")    
             else:
-                generics.write(r"\setboolean{\opcijeZaPolaganje}{false}" + "\n")
+                generics.write(r"\setboolean{opcijeZaPolaganje}{false}" + "\n")
 
             if i:
                 generics.write(r"\newcommand{\naslovFormulara}{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n") 
