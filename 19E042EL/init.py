@@ -17,19 +17,14 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
             generics.write(r"\newcommand{\footerCenter}{" + monthsDict[rok].capitalize() + " " + \
                           "20" + godina[0:1] + "/20" + godina[-2:-1] + "}")
             generics.write(r"\newboolean{ispit}" + "\n" )
+            
             if i:
-                generics.write(r"\setboolean{ispit}{true}" + "\n")
-                generics.write(r"\newcommand{\naslovFormulara}{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n") 
-                generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_ispit.pdf}" + "\n") 
+                generics.write(r"\setboolean{ispit}{true}" + "\n") 
+                generics.write(r"\newcommand{\trajanjeIspita}{180}" + "\n") 
             else:
                 generics.write(r"\setboolean{ispit}{false}" + "\n")
-                generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_kolokvijum.pdf}" + "\n") 
-                if k == "1":
-                    generics.write(r"\newcommand{\naslovFormulara}{ПРВИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
-                elif k == "2":
-                    generics.write(r"\newcommand{\naslovFormulara}{ДРУГИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
-                elif k == "3":
-                    generics.write(r"\newcommand{\naslovFormulara}{ТРЕЋИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
+                generics.write(r"\newcommand{\trajanjeIspita}{120}" + "\n") 
+
         with open('.vscode/settings.json', 'w') as settings:
             settings.write(f'''{{
     "name": "pdflatex",
@@ -40,7 +35,7 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
         "-interaction=nonstopmode",
         "-file-line-error",
         "--aux-directory=.aux",
-        "si1oe_{rok}-{godina}.tex"
+        "el_{rok}-{godina}.tex"
     ]
 }}''')
     else:

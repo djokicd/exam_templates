@@ -51,8 +51,7 @@
 
 \pagestyle{fancy}
 
-\fancyhead[C]{ЕТФ у Београду, Катедра
-за електронику}
+\fancyhead[C]{ЕТФ у Београду, Катедра за електронику}
 
 \fancyfoot[C]{\footerCenter}
 \fancyfoot[RO]{Страна \thepage\ од \pageref{LastPage}}
@@ -60,21 +59,6 @@
 
 
 \usepackage{tabularx} % in the preamble
-
-\newcommand{\printheader}
-{
-\begin{flushright}
-    \hfill
-    13. фебруар 2024. 
-\end{flushright}
-\vspace*{-35pt}
-\begin{center}
-    Електротехнички факултет 
-    Универзитета у Београду --- Катедра за Електронику \\
-    \textbf{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ \\ Одсек за софтверско инжењерство}
-\end{center}
-}
-
 
 
 \begin{document}
@@ -84,25 +68,37 @@
 \begin{flushleft}
 \vspace*{0pt}
 {\large \textbf{Електроника}} \\[2mm]
-Испит: 23.01.2024. \\
-Трајање испита: 180 минута \\
-Одговорни наставник и асистент: 
-Р. Ђурић и Д. Ђокић
+Испит: \datumIspita \\
+Трајање испита: \trajanjeIspita минута \\
+Одговорни наставник и асистент: Р. Ђурић и Д. Ђокић
 \end{flushleft}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.5\textwidth}
 \vspace*{0pt}
-\begin{tabularx}{\textwidth}{|X|X|X|X||X|X|X|X|||X|} 
-\hline
-1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & $\sum$ \\
-\hline \hline 
-\begin{minipage}{0.2\textwidth}
-\vspace*{10mm}
-\end{minipage}
-& & & & & & & &   \\
-\hline
-\end{tabularx}
+\ifthenelse{ispit}{
+        \begin{tabularx}{\textwidth}{|X|X|X|X||X|X|X|X|||X|} 
+        \hline
+        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & $\sum$ \\
+        \hline \hline 
+        \begin{minipage}{0.2\textwidth}
+        \vspace*{10mm}
+        \end{minipage}
+        & & & & & & & &   \\
+        \hline
+        \end{tabularx}
+}{
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|} 
+        \hline
+        1 & 2 & 3 & 4 & $\sum$ \\
+        \hline \hline 
+        \begin{minipage}{0.2\textwidth}
+        \vspace*{10mm}
+        \end{minipage}
+        & & & &  \\
+        \hline
+        \end{tabularx}
+}
 \end{minipage}
 
 \vspace*{2.5mm}
