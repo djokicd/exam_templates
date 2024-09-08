@@ -15,7 +15,7 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
 
 
             generics.write(r"\newcommand{\footerCenter}{" + monthsDict[rok].capitalize() + " " + \
-                          "20" + godina[0:1] + "/20" + godina[-2:-1] + "}")
+                          "20" + godina[0:2] + "/20" + godina[-2:] + "}")
             generics.write(r"\newboolean{ispit}" + "\n" )
             
             if i:
