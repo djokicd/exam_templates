@@ -1,0 +1,225 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[]{cmsrb}
+\usepackage[margin=0.4in]{geometry}
+\usepackage[serbian]{babel}
+\usepackage{ifthen}
+
+\input{underline.tex} 
+
+\usepackage[Symbolsmallscale]{upgreek}
+\usepackage{fancybox, graphicx}
+\usepackage{enumitem}
+\newcommand{\spacer}{\hspace*{5mm}}
+
+\usepackage{amsmath, amsfonts}
+\usepackage{icomma}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+
+\pagestyle{empty} 
+
+\usepackage{newtxmath}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\let\sigma\upsigma
+\let\omega\upomega
+
+\frenchspacing
+
+\newcommand{\unit}[1]{{\rm\,#1}}
+\newcommand{\jj}{{\rm j}}
+\newcommand{\ee}{{\rm e}}
+\newcommand{\de}{{\rm d}}
+\newcommand{\uu}{{\rm u}}
+\newcommand{\DD}{{\rm D}}
+
+\newcommand{\faz}[1]{\ensuremath{\underline{#1}}}
+
+\newcommand{\ID}[0]{0}
+
+\renewcommand{\infty}{\includegraphics[scale=1]{inf.pdf}}
+
+
+\usepackage{tabularx} % in the preamble
+
+\newboolean{opcijeZaPolaganje} 
+\input{generics.tex}
+
+\newcommand{\printheader}
+{
+\begin{flushright}
+    \hfill
+    \datumIspita
+\end{flushright}
+\vspace*{-35pt}
+\begin{center}
+    Електротехнички факултет 
+    Универзитета у Београду --- Катедра за Електронику \\
+    \textbf{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ \\ Одсек за софтверско инжењерство}
+\end{center}
+}
+
+\begin{document}
+
+\printheader
+
+\vspace*{-1mm}
+\noindent
+\doublebox{%
+\begin{minipage}[c]{\textwidth} \small
+\textbf{Напомене.} 
+Израда одабране опције траjе 180 минута. Није дозвољено
+напуштање сале 60 минута од почетка израде задатака. Дозвољено jе читко
+писање
+графитном оловком. Дозвољена jе употреба овог формулара и једне испитне
+вежбанке. Дозвољена jе и употреба непрограмабилних
+калкулатора.
+Градиво jе подељено по колоквиjумима. Сваки колоквиjум састављен jе из два
+питања и jедног задатка. Бодовање питања и задатака означено jе
+угластим
+заградама иза одговараjуће ознаке тачке.
+Задатке решавати \textbf{искључиво} у вежбанци, полазећи од \textbf{прве} стране.
+Коначне одговоре на питања уписати у предвиђена поља, или заокружити
+понуђене одговоре. Бодују се \myul{\textbf{само}} тачно одговорена питања.
+Вежбанка се може користити и за припрему одговора на питања која захтевају извођење,
+полазећи од \textbf{последње} стране вежбанке (таj део рада се не прегледа), а
+коначан поступак треба да се налази на белинама формулара, и служи да се
+провери оригиналност решења (\textit{одговори без извођења неће бити признати}).
+У питањима у коjима се бира понуђени одговор, тачан одговор доноси
+назначене поене, одговор „\textit{Не знам}“ или празно носи 0 поена, а погрешан
+одговор носи $-1$ поен. \\[0.5mm]
+Питања и задаци ће бити прегледани само уколико се налазе на \textbf{предвиђеним}
+местима.
+\end{minipage}}
+
+\vspace{2mm}
+\noindent
+\textbf{Попунити податке о студенту 
+\myul{хемијском оловком}. Исте податке 
+исписати и на омоту вежбанке.
+} 
+%
+\begin{center}
+\vspace*{0mm} 
+\includegraphics[scale=1]{si1oe_tablica_ispit.pdf}
+\end{center}
+
+\ifthenelse{\boolean{opcijeZaPolaganje}}{
+    \noindent
+    \textbf{\myul{Обавезно} заокружити опцију за полагање испита:}
+    \hfill
+    (\textit{i}) Само К3
+    (\textit{ii}) К1 и К3
+    (\textit{iii}) К2 и К3
+    (\textit{iv}) K1, К2 и К3 \\[1mm]
+    \textbf{Одабрану опцију назначити \myul{и на корици вежбанке}.} \\
+}{
+    \begin{center}
+        ИНТЕГРАЛНИ ИСПИТ \\
+    \end{center}
+}
+\noindent
+\textbf{\large Први колоквијум}. \hrulefill \\
+
+\vspace*{0mm}
+\noindent
+\textbf{Задатак}. \\[0.5mm]
+\renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
+
+\noindent\textbf{Питања.} \\[.5mm]
+%
+\renewcommand{\ID}{1}\input{pitanja/P1t.tex}
+
+\renewcommand{\ID}{2}\input{pitanja/P2t.tex}
+
+
+\newpage 
+\noindent
+\textbf{\large Други колоквијум}. \hrulefill \\
+\noindent
+\textbf{Задатак}. \\[0.5mm]
+\renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+
+\noindent\textbf{Питања.} \\[1mm]
+%
+\renewcommand{\ID}{3}\input{pitanja/P3t.tex}
+
+\renewcommand{\ID}{4}\input{pitanja/P4t.tex}
+
+\newpage
+
+\vspace{2mm}
+\noindent
+\textbf{Попунити податке о студенту 
+\myul{хемијском оловком}. Исте податке 
+исписати и на омоту вежбанке.
+} 
+%
+\begin{center}
+\vspace*{0mm} 
+\includegraphics[scale=1]{SIS-tablica.pdf}
+\end{center}
+
+\noindent
+\textbf{\large Трећи колоквијум}. \hrulefill \\
+
+\vspace*{2mm}
+\noindent
+\textbf{Задатак}. \\[0.5mm]
+\renewcommand{\ID}{3}\input{zadaci/Z3t.tex}
+
+\vspace{5mm}
+\noindent\textbf{Питања.} 
+
+\renewcommand{\ID}{5}\input{pitanja/P5t.tex}
+
+\vspace*{2mm}
+\renewcommand{\ID}{6}\input{pitanja/P6t.tex}
+
+
+
+%\end{document}
+
+\newpage
+
+\printheader
+\begin{center}    
+    \large \textbf{Одговори на питања 
+    и решења задатака}    
+\end{center}
+
+
+\noindent
+\textbf{\large Питања}. \\[0.5mm]
+
+\renewcommand{\ID}{1}\input{pitanja/P1s.tex}
+
+\vspace*{5mm}
+\renewcommand{\ID}{2}\input{pitanja/P2s.tex}
+\\[10mm]
+\renewcommand{\ID}{3}\input{pitanja/P3s.tex}
+\\[10mm]
+\renewcommand{\ID}{4}\input{pitanja/P4s.tex}
+\\[10mm]
+\renewcommand{\ID}{5}\input{pitanja/P5s.tex}
+\\[10mm]
+\renewcommand{\ID}{6}\input{pitanja/P6s.tex}
+
+\vspace*{5mm}
+
+\noindent
+\textbf{\large Задаци}. \\[0.5mm]
+
+\renewcommand{\ID}{1}\input{zadaci/Z1s.tex}
+\\[10mm]
+\renewcommand{\ID}{2}\input{zadaci/Z2s.tex}
+\\[10mm]
+\renewcommand{\ID}{3}\input{zadaci/Z3s.tex}
+
+\end{document}
