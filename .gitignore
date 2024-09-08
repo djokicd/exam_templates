@@ -1,5 +1,6 @@
 ## VScode configuration
-generics.tex
+**/generics.tex
+**/__pycache__/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
