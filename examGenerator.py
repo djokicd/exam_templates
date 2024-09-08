@@ -1,12 +1,12 @@
-validMonths = ["JAN", "FEB", "MAR", "APR", "JUN", "JUL", "AUG", "SEP", "OCT", "DEC"]
+validMonths = ["JAN", "FEB", "MAR", "APR", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
 
 def validYear(x):
     if len(x) != 5 or \
        x[2] != "-" or \
-       not '0'< x[0] < '9' or \
-       not '0'< x[1] < '9' or \
-       not '0'< x[3] < '9' or \
-       not '0'< x[4] < '9':
+       not '0'<= x[0] <= '9' or \
+       not '0'<= x[1] <= '9' or \
+       not '0'<= x[3] <= '9' or \
+       not '0'<= x[4] <= '9':
         raise ValueError("Pogresan format datum")
     return True
 
