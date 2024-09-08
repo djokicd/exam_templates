@@ -22,9 +22,9 @@ def main(rok, godina, datum, k = False, i = False, opcije = True):
 
             if i:
                 generics.write(r"\newcommand{\naslovFormulara}{ИСПИТ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n") 
-                generics.write(r"\newcommand{\tablicePDF}{si1oe_tablica_ispit.pdf}" + "\n") 
+                generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_ispit.pdf}" + "\n") 
             else:
-                generics.write(r"\newcommand{\tablicePDF}{si1oe_tablica_kolokvijum.pdf}" + "\n") 
+                generics.write(r"\newcommand{\tablicaPDF}{si1oe_tablica_kolokvijum.pdf}" + "\n") 
                 if k == 1:
                     generics.write(r"\newcommand{\naslovFormulara}{ПРВИ КОЛОКВИЈУМ ИЗ ОСНОВА ЕЛЕКТРОНИКЕ}" + "\n")    
                 elif k == 2:
