@@ -125,91 +125,83 @@
     \end{center}
 }
 \noindent
-\textbf{\large Први колоквијум}. \hrulefill \\
-
-\vspace*{0mm}
-\noindent
-\textbf{Задатак}. \\[0.5mm]
-\renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
-
-\noindent\textbf{Питања.} \\[.5mm]
-%
-\renewcommand{\ID}{1}\input{pitanja/P1t.tex}
-
-\renewcommand{\ID}{2}\input{pitanja/P2t.tex}
 
 
-\newpage 
-\noindent
-\textbf{\large Други колоквијум}. \hrulefill \\
-\noindent
-\textbf{Задатак}. \\[0.5mm]
-\renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+\ifthenelse{ispit}{ %Ispitna varijanta
+    \textbf{\large Први колоквијум}. \hrulefill \\
+    \noindent
+    \textbf{Задатак}. \\[0.5mm]
+    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
+    \noindent\textbf{Питања.} \\[.5mm]
+    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}
+    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}
 
-\noindent\textbf{Питања.} \\[1mm]
-%
-\renewcommand{\ID}{3}\input{pitanja/P3t.tex}
+    \noindent
+    \textbf{\large Други колоквијум}. \hrulefill \\
+    \noindent
+    \textbf{Задатак}. \\[0.5mm]
+    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+    \noindent\textbf{Питања.} \\[1mm]
+    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}
+    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}
 
-\renewcommand{\ID}{4}\input{pitanja/P4t.tex}
+    \newpage
 
-\newpage
+    \vspace{2mm}
+    \noindent
+    \textbf{Попунити податке о студенту 
+    \myul{хемијском оловком}. Исте податке 
+    исписати и на омоту вежбанке.
+    } 
+    %
+    \begin{center}
+    \vspace*{0mm} 
+    \includegraphics[scale=1]{\tablicaPDF}
+    \end{center}
 
-\vspace{2mm}
-\noindent
-\textbf{Попунити податке о студенту 
-\myul{хемијском оловком}. Исте податке 
-исписати и на омоту вежбанке.
-} 
-%
-\begin{center}
-\vspace*{0mm} 
-\includegraphics[scale=1]{\tablicaPDF}
-\end{center}
+    \noindent
+    \textbf{\large Трећи колоквијум}. \hrulefill \\
+    \vspace*{2mm}
+    \noindent
+    \textbf{Задатак}. \\[0.5mm]
+    \renewcommand{\ID}{3}\input{zadaci/Z3t.tex}
 
-\noindent
-\textbf{\large Трећи колоквијум}. \hrulefill \\
+    \noindent\textbf{Питања.} 
+    \renewcommand{\ID}{5}\input{pitanja/P5t.tex}
+    \renewcommand{\ID}{6}\input{pitanja/P6t.tex}
+}
+{ %Kolokvijumska varijanta
+    \noindent\textbf{Питања.} \\[.5mm]
+    \renewcommand{\ID}{1}\input{pitanja/P1t.tex}
+    \renewcommand{\ID}{2}\input{pitanja/P2t.tex}
+    \renewcommand{\ID}{3}\input{pitanja/P3t.tex}
+    \renewcommand{\ID}{4}\input{pitanja/P4t.tex}    
 
-\vspace*{2mm}
-\noindent
-\textbf{Задатак}. \\[0.5mm]
-\renewcommand{\ID}{3}\input{zadaci/Z3t.tex}
-
-\vspace{5mm}
-\noindent\textbf{Питања.} 
-
-\renewcommand{\ID}{5}\input{pitanja/P5t.tex}
-
-\vspace*{2mm}
-\renewcommand{\ID}{6}\input{pitanja/P6t.tex}
+    \textbf{Задатак}. \\[0.5mm]
+    \renewcommand{\ID}{1}\input{zadaci/Z1t.tex}
+    \renewcommand{\ID}{2}\input{zadaci/Z2t.tex}
+}
 
 
-
-%\end{document}
-
-\newpage
+\newpage % Resenja pitanja i zadataka
 
 \printheader
 \begin{center}    
-    \large \textbf{Одговори на питања 
-    и решења задатака}    
+    \large \textbf{Одговори на питања и решења задатака}    
 \end{center}
 
 
 \noindent
 \textbf{\large Питања}. \\[0.5mm]
 
-\renewcommand{\ID}{1}\input{pitanja/P1s.tex}
-
-\vspace*{5mm}
-\renewcommand{\ID}{2}\input{pitanja/P2s.tex}
-\\[10mm]
-\renewcommand{\ID}{3}\input{pitanja/P3s.tex}
-\\[10mm]
-\renewcommand{\ID}{4}\input{pitanja/P4s.tex}
-\\[10mm]
-\renewcommand{\ID}{5}\input{pitanja/P5s.tex}
-\\[10mm]
-\renewcommand{\ID}{6}\input{pitanja/P6s.tex}
+\renewcommand{\ID}{1}\input{pitanja/P1s.tex}\\[10mm]
+\renewcommand{\ID}{2}\input{pitanja/P2s.tex}\\[10mm]
+\renewcommand{\ID}{3}\input{pitanja/P3s.tex}\\[10mm]
+\renewcommand{\ID}{4}\input{pitanja/P4s.tex}\\[10mm]
+\ifthenelse{ispit}{
+\renewcommand{\ID}{5}\input{pitanja/P5s.tex}\\[10mm]
+\renewcommand{\ID}{6}\input{pitanja/P6s.tex}\\[10mm]
+}{}
 
 \vspace*{5mm}
 
@@ -218,8 +210,10 @@
 
 \renewcommand{\ID}{1}\input{zadaci/Z1s.tex}
 \\[10mm]
-\renewcommand{\ID}{2}\input{zadaci/Z2s.tex}
-\\[10mm]
+\renewcommand{\ID}{2}\input{zadaci/Z2s.tex}\\[10mm]
+\ifthenelse{ispit}{
 \renewcommand{\ID}{3}\input{zadaci/Z3s.tex}
+}{}
 
 \end{document}
+ 
