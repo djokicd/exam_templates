@@ -15,6 +15,6 @@ p = argparse.ArgumentParser()
 p.add_argument('rok')
 p.add_argument('godina')
 p.add_argument('datum')
-p.add_argument('--kolokvijum', dest='k', action='store_true', default=False)
+p.add_argument('--kolokvijum', dest='k', default=False)
 p.add_argument('--ispit', dest='i', action='store_true', default=False)
 
