@@ -1,0 +1,11 @@
+{
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+        "--shell-escape", // if you want to have the shell-escape flag
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "el_XXX_xx-xx.tex"
+    ]
+}

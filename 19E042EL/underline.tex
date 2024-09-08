@@ -1,0 +1,22 @@
+%\setcounter{errorcontextlines}{999}
+%\documentclass{article}
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{soulutf8}
+\usepackage{color}
+\makeatletter
+\newcommand*{\whiten}[1]{\llap{\textcolor{white}{{\the\SOUL@token}}\hspace{#1pt}}}
+\DeclareRobustCommand*\myul{%
+    \def\SOUL@everyspace{\underline{\space}\kern\z@}%
+    \def\SOUL@everytoken{%
+     \setbox0=\hbox{\the\SOUL@token}%
+     \ifdim\dp0>\z@
+        \raisebox{\dp0}{\underline{\phantom{\the\SOUL@token}}}%
+        \whiten{1}\whiten{0}%
+        \whiten{-1}\whiten{-2}%
+        \llap{\the\SOUL@token}%
+     \else
+        \underline{\the\SOUL@token}%
+     \fi}%
+\SOUL@}
+\makeatother

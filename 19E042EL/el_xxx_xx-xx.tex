@@ -1,0 +1,276 @@
+\documentclass[10pt, a4paper, twoside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1, T2A]{fontenc}
+\usepackage[]{cmsrb}
+\usepackage[margin=.5in, top = 0.75in, bottom=0.75in]
+{geometry}
+
+\usepackage{lastpage}
+
+\usepackage{ifthen}
+
+\usepackage[serbian]{babel}
+
+\input{underline.tex}
+\input{generics.tex}
+
+\usepackage[Symbolsmallscale]{upgreek}
+\usepackage{fancybox, fancyhdr, graphicx}
+\usepackage{enumitem}
+\newcommand{\spacer}{\hspace*{5mm}}
+
+\usepackage{amsmath, amsfonts}
+\usepackage{icomma}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+
+%\usepackage{mathptmx}
+\usepackage{newtxmath}
+%\usepackage{tempora} % this supports Cyrillic
+%\usepackage{newtxtext}
+
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\let\sigma\upsigma
+\let\omega\upomega
+
+\frenchspacing
+
+\newcommand{\unit}[1]{{\rm\,#1}}
+\newcommand{\jj}{{\rm j}}
+\newcommand{\ee}{{\rm e}}
+\newcommand{\de}{{\rm d}}
+\newcommand{\uu}{{\rm u}}
+\newcommand{\DD}{{\rm D}}
+
+\newcommand{\faz}[1]{\ensuremath{\underline{#1}}}
+
+\newcommand{\ID}[0]{0}
+
+\renewcommand{\infty}{\includegraphics[scale=1]{inf.pdf}}
+
+\pagestyle{fancy}
+
+\fancyhead[C]{ЕТФ у Београду, Катедра за електронику}
+
+\fancyfoot[C]{\footerCenter}
+\fancyfoot[RO]{Страна \thepage\ од \pageref{LastPage}}
+\fancyfoot[LE]{Страна \thepage\ од \pageref{LastPage}}
+
+
+\usepackage{tabularx} % in the preamble
+
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\begin{flushleft}
+\vspace*{0pt}
+{\large \textbf{Електроника}} \\[2mm]
+\ifthenelse{\boolean{ispit}}{Испит}{Колоквијум}: \datumIspita \\
+Трајање испита: \trajanjeIspita\ минута \\
+Одговорни наставник и асистент: Р. Ђурић и Д. Ђокић
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+\vspace*{0pt}
+\ifthenelse{\boolean{ispit}}{
+        \begin{tabularx}{\textwidth}{|X|X|X|X||X|X|X|X|||X|} 
+        \hline
+        1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & $\sum$ \\
+        \hline \hline 
+        \begin{minipage}{0.2\textwidth}
+        \vspace*{10mm}
+        \end{minipage}
+        & & & & & & & &   \\
+        \hline
+        \end{tabularx}
+}{
+        \begin{tabularx}{\textwidth}{|X|X|X|X|X|} 
+        \hline
+        1 & 2 & 3 & 4 & $\sum$ \\
+        \hline \hline 
+        \begin{minipage}{0.2\textwidth}
+        \vspace*{10mm}
+        \end{minipage}
+        & & & &  \\
+        \hline
+        \end{tabularx}
+}
+\end{minipage}
+
+\vspace*{2.5mm}
+
+\noindent
+\textbf{Напомене}: 
+\textit{Испит се полаже интегрално (ради се 3 сата), или преко колоквијума (ради се 2 сата), када се може радити први
+колоквијум (задаци 1, 2, 3 и 4), или други колоквијум (задаци 5, 6, 7 и 8). 
+Заокружити тачно једну опцију за полагање испита.
+Студентима који желе да поправе резултате колоквијума 
+при извођењу коначне оцене
+у обзир ће се узимати већи број поена између колоквијума 
+и дела испита који се односи на
+колоквијум. 
+} \vspace*{2mm}
+
+\noindent
+\textbf{Опција за полагање испита:} 
+\hfill
+(\textit{i}) I колоквијум, 
+\hfill
+(\textit{ii}) II колоквијум,
+\hfill
+(\textit{iii}) Интегрални испит.
+
+\vspace*{5mm}
+
+\noindent
+\textbf{Презиме, име и број индекса:}
+\hrulefill.
+
+\vspace*{5mm}
+\noindent
+\boxed{\textbf{1.}}
+\begin{minipage}[t]{0.93\textwidth}
+\begin{enumerate}
+\itemsep0pt
+%\begin{itemize}
+\item[(a)] \textbf{[0п]}
+\end{enumerate}
+\end{minipage}
+
+\vspace*{1mm}
+%\textbf{\myul{Решење}}:
+
+\newpage
+
+
+%\vspace*{5mm}
+\noindent
+\boxed{\textbf{2.}}
+\begin{minipage}[t]{0.93\textwidth}
+\begin{enumerate}
+\itemsep0pt
+\item[(а)] \textbf{[0п]}
+\end{enumerate}
+\end{minipage}
+
+
+
+\newpage
+
+\setlist{nolistsep}
+
+%\vspace*{mm}
+\noindent
+\begin{minipage}[t]{0.8\linewidth}
+\noindent
+\boxed{\textbf{3.}} 
+\vspace*{2mm}
+%\setlist{nolistsep}
+\end{minipage}
+\begin{minipage}[t]{0.2\linewidth}
+\begin{flushright}
+	\vspace{-10pt}
+        %\includegraphics[scale=1]{}
+\end{flushright}
+\end{minipage}
+
+\vspace*{5mm}
+\noindent
+%\textbf{Простор за рад:}
+
+
+\newpage 
+
+%\vspace*{mm}
+\noindent
+\begin{minipage}[t]{0.7\linewidth}
+\noindent
+\boxed{\textbf{4.}} \textbf{[0п]} 
+\end{minipage}
+\begin{minipage}[t]{0.3\linewidth}
+\begin{flushright}
+	\vspace{-10pt}
+        %\includegraphics[scale=1]{fig/t4.pdf}
+\end{flushright}
+\end{minipage}
+
+
+\newpage
+
+%\vspace*{5mm}
+\noindent
+\boxed{\textbf{5.}}
+\begin{minipage}[t]{0.93\textwidth}
+\begin{enumerate}
+\itemsep0pt
+%\begin{itemize}
+\item[(a)] \textbf{[0п]}
+\end{enumerate}
+\end{minipage}
+
+\newpage
+
+
+%\vspace*{5mm}
+\noindent
+\boxed{\textbf{6.}}
+\begin{minipage}[t]{0.93\textwidth}
+\begin{enumerate}
+\itemsep0pt
+%\begin{itemize}
+\item[(a)] \textbf{[0п]}
+
+\end{enumerate}
+\end{minipage}
+
+
+\newpage
+
+%\vspace*{mm}
+\noindent
+\begin{minipage}[t]{0.6\linewidth}
+\noindent
+\boxed{\textbf{7.}} \textbf{[0п]} 
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+\begin{flushright}
+	\vspace{-10pt}
+        %\includegraphics[scale=1]{fig/t7.pdf}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+\newpage
+
+%\vspace*{mm}
+\noindent
+\begin{minipage}[t]{0.7\linewidth}
+\noindent
+\boxed{\textbf{8.}} \textbf{[0п]}
+\end{minipage}
+\begin{minipage}[t]{0.3\linewidth}
+\begin{flushright}
+	\vspace*{0pt}
+        %\includegraphics[scale=.833]{fig/t8.pdf}
+\end{flushright}
+\end{minipage}
+
+
+
+\newpage
+
+\textbf{Додатни простор за рад:}
+
+\newpage
+
+\textbf{Додатни простор за рад:}
+
+\end{document}
